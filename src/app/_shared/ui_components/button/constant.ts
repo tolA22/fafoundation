@@ -10,6 +10,11 @@ export const BUTTON_COLOR_MAPPING: { [colorName: string]: IButtonColor } = {
     bg: "bg-[#EEA523]",
     border: "",
   },
+  green: {
+    text: "text-[#000000]",
+    bg: "bg-[#76AC3C]",
+    border: "",
+  },
   default: {
     text: "text-[#FFFFFF]",
     bg: "transparent",
