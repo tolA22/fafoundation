@@ -2,6 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Sentient";
+  src: url('/fonts/Sentient-Variable.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Aventa-Bold";
+  src: url('/fonts/Aventa-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Aventa-ExtraBold";
+  src: url('/fonts/Aventa-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Aventa-ExtraLight";
+  src: url('/fonts/Aventa-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Aventa-Light";
+  src: url('/fonts/Aventa-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Aventa-Medium";
+  src: url('/fonts/Aventa-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Aventa-Regular";
+  src: url('/fonts/Aventa-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Aventa-SemiBold";
+  src: url('/fonts/Aventa-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Aventa-Thin";
+  src: url('/fonts/Aventa-Thin.ttf') format('truetype');
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
