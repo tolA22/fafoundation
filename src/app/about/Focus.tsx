@@ -33,17 +33,17 @@ const Focus = (props: data) => {
   }, [position]);
 
   return (
-    <div className="font-aventa h-[max-content] border rounded-3xl border-gray-200 p-4 min-w-[250px] lg:min-w-[525px] lg:max-w-[700px] lg:p-8 ">
+    <div className=" h-[max-content] border rounded-3xl border-gray-200 p-4 min-w-[250px] lg:min-w-[525px] lg:max-w-[700px] lg:p-8 ">
       <div className="relative">
         <img className="border rounded-2xl" src={img} alt="" />
         <p
           style={{ backgroundColor: mini_color }}
           className={`${location} text-white absolute p-2 rounded-2xl flex flex-col  max-w-[63px] lg:max-w-[130px] lg:p-5`}
         >
-          <span className=" text-center italic font-semibold lg:text-[27px]">
+          <span className=" font-sentient text-center italic font-semibold lg:text-[27px]">
             {mini_header}
           </span>
-          <span className="text-center text-[6px] lg:text-[11px] ">
+          <span className="font-aventa text-center text-[6px] lg:text-[11px] ">
             {mini_sub_text}
           </span>
         </p>
