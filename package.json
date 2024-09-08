@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "formik": "^2.4.6",
     "next": "^14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "react-phone-number-input": "^3.4.5",
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",

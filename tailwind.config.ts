@@ -33,6 +33,9 @@ const config: Config = {
       },
       backgroundSize: {
         'half': '50% 50%',
+      },
+      width: {
+        'full-minus-10': 'calc(100% - 10%)', // Custom width
       }
     },
   },

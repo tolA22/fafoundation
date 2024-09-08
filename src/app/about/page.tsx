@@ -8,7 +8,9 @@ const page = () => {
   return (
     <div>
       <div className=' pt-36 bg-[url("/hero_mobile.svg")]   lg:bg-auto lg:bg-[url("/Hero-bg.png")]  bg-no-repeat min-h-[600px]  pb-4 flex items-center flex-col lg:pt-44'>
-        <span className="font-aventa mb-3 text-[16px] text-white ">ABOUT US</span>
+        <span className="font-aventa mb-3 text-[16px] text-white ">
+          ABOUT US
+        </span>
         <h3 className="font-sentient  px-6 text-center text-[36px] font-medium italic leading-[44.68px] pb-6 text-white lg:max-w-[850px] lg:font-semibold lg:text-6xl">
           Dedicated to creating positive impact, improving lives across Africa &
           Beyond
@@ -22,7 +24,9 @@ const page = () => {
               </p>
             </div>
             <h3 className=" leading-[28px] font-aventa text-center relative bottom-16 lg:text-[30px] lg:max-w-[860px]  lg:bottom-48 lg:leading-[42px]">
-              <span className=" font-aventa-Semibold font-semibold">Funmilayo Akinrinmisi</span>
+              <span className=" font-aventa-Semibold font-semibold">
+                Funmilayo Akinrinmisi
+              </span>
               <span>
                 {" "}
                 Foundation is a non-profit organization dedicated to creating
@@ -73,7 +77,7 @@ Through scholarships, school infrastructure projects, and educational programs, 
                 mini_header="20%"
                 mini_sub_text="Primary school-age children in Sub-saharan Africa are
 out of school"
-position="BottomLeft"
+                position="BottomLeft"
               />
               <Focus
                 img="/focus1.svg"
@@ -98,17 +102,54 @@ Our foundation collaborates with mental health professionals, advocacy groups, a
           </section>
 
           <section className="mt-24 lg:mt-44">
-            <p className=" font-aventa text-[14px] text-center lg:text-[18px]">MEET THE TEAM</p>
-            <h4 className="leading-[39px] text-center text-[30px] lg:text-[40px]"> A collective of  passionate individuals</h4>
-            <div className="flex flex-wrap my-8 justify-evenly gap-4 lg:w-[80vw] lg:mx-auto lg:max-w-[1500px] lg:gap-8 lg:justify-start lg:pl-6"  >
-              <Profile name="Funmilayo Akinrinmisi" image="/p1.svg" text="Founder & President"/>
-              <Profile name="James Obrien" image="/p2.svg" text="Vice President, Global Operations"/>
-              <Profile name="Ellene Bachor" image="/p3.svg" text="Vice President,Finance"/>
-              <Profile name="Buchi Gloria" image="/p4.svg" text="Vice President,Grants & Programs"/>
-              <Profile name="Steven Hassan" image="/p5.svg" text="Director,West Africa"/>
-              <Profile name="Funmilayo Akinrinmisi" image="/p6.svg" text="Founder"/>
-              <Profile name="Funmilayo Akinrinmisi" image="/p6.svg" text="Founder"/>
-              <Profile name="Funmilayo Akinrinmisi" image="/p6.svg" text="Founder"/>
+            <p className=" font-aventa text-[14px] text-center lg:text-[18px]">
+              MEET THE TEAM
+            </p>
+            <h4 className="leading-[39px] text-center text-[30px] lg:text-[40px]">
+              {" "}
+              A collective of passionate individuals
+            </h4>
+            <div className="flex flex-wrap my-8 justify-evenly gap-4 lg:w-[80vw] lg:mx-auto lg:max-w-[1500px] lg:gap-8 lg:justify-start lg:pl-6">
+              <Profile
+                name="Funmilayo Akinrinmisi"
+                image="/p1.svg"
+                text="Founder & President"
+              />
+              <Profile
+                name="James Obrien"
+                image="/p2.svg"
+                text="Vice President, Global Operations"
+              />
+              <Profile
+                name="Ellene Bachor"
+                image="/p3.svg"
+                text="Vice President,Finance"
+              />
+              <Profile
+                name="Buchi Gloria"
+                image="/p4.svg"
+                text="Vice President,Grants & Programs"
+              />
+              <Profile
+                name="Steven Hassan"
+                image="/p5.svg"
+                text="Director,West Africa"
+              />
+              <Profile
+                name="Funmilayo Akinrinmisi"
+                image="/p6.svg"
+                text="Founder"
+              />
+              <Profile
+                name="Funmilayo Akinrinmisi"
+                image="/p6.svg"
+                text="Founder"
+              />
+              <Profile
+                name="Funmilayo Akinrinmisi"
+                image="/p6.svg"
+                text="Founder"
+              />
             </div>
           </section>
         </div>
