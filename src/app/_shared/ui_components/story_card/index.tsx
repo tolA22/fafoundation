@@ -12,7 +12,7 @@ export default function StoryCard({
   profession,
 }: IStoryCard) {
   return (
-    <div className="grid min-h-[300px] min-w-[290px] bg-[#EBF4E1] rounded-xl p-4 gap-y-16 text-[#072222]">
+    <div className="grid min-h-[400px] min-w-[290px] bg-[#EBF4E1] rounded-xl p-4 gap-y-16 text-[#072222]">
       <h3>{content}</h3>
       <section className="flex gap-x-4 items-center 	">
         <Image

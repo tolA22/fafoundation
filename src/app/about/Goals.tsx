@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 interface data {
   title: string;
@@ -29,10 +29,12 @@ const Goals = (props: data) => {
         " font-aventa bg-half p-5 min-h-[194px] bg-right-bottom bg-no-repeat rounded-2xl lg:lg:max-w-[525px] lg:min-h-[375px] lg:rounded-[50px] lg:p-10"
       }
     >
-      <h2 className="text-[20px] text-white mb-2 text- lg:text-[32px]">
+      <h2 className="font-normal text-2xl leading-[29.64px] text-aventa_bold text-white mb-2">
         {title}
       </h2>
-      <p className="text-[14px] text-white lg:text-[20px]">{text}</p>
+      <p className="font-normal leading-[21.42px]  text-sm pt-2 font-aventa text-[#FFFFFFCC]">
+        {text}
+      </p>
     </div>
   );
 };

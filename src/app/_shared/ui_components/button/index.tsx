@@ -23,7 +23,7 @@ export default function PillButton({
         },
         `${colorProps.bg ?? ""} ${colorProps.text ?? ""} ${
           colorProps.border ?? ""
-        } py-3 px-6 rounded-full font-normal text-sm leading-[20.02px]`
+        } py-3 px-6 rounded-full font-normal text-sm leading-[20.02px] font-aventa_bold`
       )}
     >
       {buttonText}
