@@ -21,7 +21,7 @@ export default function FafHome() {
         <section className="flex flex-col lg:flex-row">
           <section className="pt-40 lg:pt-60 lg:max-w-[40%] ">
             <section>
-              <h1 className="text-[42px] font-sentient font-medium italic leading-[43.68px] pb-6 text-white">
+              <h1 className="text-[36px] leading-[44.64px] lg:text-[60px] lg:leading-[62.4px] font-sentient_italic font-medium  pb-6 text-white">
                 Creating Positive Change & Improving Lives
               </h1>
               <h3 className="text-base font-aventa font-normal text-white/80 leading-[24.64px]">
