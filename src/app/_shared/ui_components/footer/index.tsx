@@ -3,14 +3,14 @@ import JoinCard from "../join_card";
 
 export default function Footer() {
   return (
-    <div className='bg-[url("/footer_mobile.svg")] bg-cover mt-[-4em] bg-no-repeat min-h-[1000px] px-2'>
+    <div className=' bg-[url("/footer_mobile.svg")] bg-cover lg:mt-[-4em] bg-no-repeat min-h-[1000px] px-2'>
       <div className="pt-28">
         <HomeSection
           title="JOIN US"
           description="Get involved and make a difference today"
         />
       </div>
-      <section className="grid gap-6 mt-8">
+      <section className="grid gap-6 mt-8 lg:grid-cols-2 lg:mx-28">
         <JoinCard
           title="Partner with Us"
           description="Collaborate with us as a partner. Whether you're an organization, business, or individual, your partnership can amplify our efforts and bring about positive change"
