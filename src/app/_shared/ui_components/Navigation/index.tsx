@@ -33,7 +33,7 @@ const index = (props: Data) => {
     onClick={handleClick}
       className={`${
         bg ? bg : ""
-      } py-3 px-3 rounded-[20px] text-center mr-3 font-aventa_Semibold transition-all duration-300 ${
+      } py-2 px-6 rounded-[25px] text-center mr-3 font-aventa_Semibold transition-all duration-300 ${
         currentPage === name? "bg-[#F2F2F2]" : ""
       } hover:bg-[#F2F2F2] mb-3 lg:mb-0 ml-3 lg:ml-0`}
       href={link}

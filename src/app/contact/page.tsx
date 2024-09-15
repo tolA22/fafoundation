@@ -2,8 +2,6 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import { useFormik } from "formik";
-import * as Yup from "yup";
 import HomeSection from "../_shared/ui_components/home_section";
 import HeaderWrapper from "../_shared/ui_components/header_wrapper";
 import ContactBody from "./body";
@@ -23,6 +21,7 @@ const page = () => {
           header
         />
       </HeaderWrapper>
+      
       <ContactBody />
     </section>
   );
