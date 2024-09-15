@@ -5,32 +5,36 @@ import { useEffect, useState } from "react";
 import Navigation from "../Navigation";
 import Socials from "../Socials";
 import "./custom.css";
+import { usePathname } from "next/navigation";
 
 const index = () => {
   const [currentPage, setCurrentPage] = useState("");
   const [show, setShow] = useState(false);
+  const pathname = usePathname();
 
   const navRef = useRef<HTMLElement | null>(null);
 
-  useEffect(() => {
-    // Check if window is available to ensure client-side execution
-    if (typeof window !== "undefined") {
-      const path = window.location.pathname;
+  const isActive = (path: string) => pathname === path;
 
-      // Determine the current page based on the path
-      if (path === "/home") {
-        setCurrentPage("Home");
-      } else if (path === "/about") {
-        setCurrentPage("About");
-      } else if (path === "/register") {
-        setCurrentPage("Register");
-      } else if (path === "/contact") {
-        setCurrentPage("Contact");
-      } else {
-        setCurrentPage("Unknown"); // Fallback for untracked routes
-      }
-    }
-  }, []);
+  // useEffect(() => {
+  //   // Check if window is available to ensure client-side execution
+  //   if (typeof window !== "undefined") {
+  //     const path = window.location.pathname;
+
+  //     // Determine the current page based on the path
+  //     if (path === "/home") {
+  //       setCurrentPage("Home");
+  //     } else if (path === "/about") {
+  //       setCurrentPage("About");
+  //     } else if (path === "/register") {
+  //       setCurrentPage("Register");
+  //     } else if (path === "/contact") {
+  //       setCurrentPage("Contact");
+  //     } else {
+  //       setCurrentPage("Unknown"); // Fallback for untracked routes
+  //     }
+  //   }
+  // }, []);
 
   function toggle() {
     setShow(!show);
@@ -53,25 +57,19 @@ const index = () => {
             Navref={navRef}
             name="Home"
             link="/home"
-            currentPage={currentPage}
             toggler={() => {
               setShow(false);
             }}
-            setPage={(e: string) => {
-              setCurrentPage(e);
-            }}
+            route={isActive}
           />
           <Navigation
             Navref={navRef}
             name="About"
             link="/about"
-            currentPage={currentPage}
             toggler={() => {
               setShow(false);
             }}
-            setPage={(e: string) => {
-              setCurrentPage(e);
-            }}
+            route={isActive}
           />
           {/* <Navigation
             Navref={navRef}
@@ -92,14 +90,11 @@ const index = () => {
             toggler={() => {
               setShow(false);
             }}
-            currentPage={currentPage}
-            setPage={(e: string) => {
-              setCurrentPage(e);
-            }}
+            route={isActive}
           />
           <Link
             className="ml-3 lg:hidden mr-3 rounded-[20px] px-3 py-2 font- bg-[#EEA523] hover:opacity-70 duration-500 text-center font-aventa_Semibold"
-            href="/donate"
+            href="/contact"
           >
             Donate Now
           </Link>
@@ -113,7 +108,7 @@ const index = () => {
 
         <Link
           className="hidden lg:inline-block rounded-[20px] px-3 py-2 font-aventa_Semibold bg-[#EEA523] hover:opacity-70 duration-500 "
-          href="/donate"
+          href="/contact"
         >
           Donate Now
         </Link>

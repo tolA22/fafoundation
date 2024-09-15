@@ -5,6 +5,7 @@ import {
   ContactFormLabel,
   ContactFormPhone,
   ContactRequestType,
+  ContactSubmitButton,
 } from "./contactFormField";
 
 export default function ContactForm() {
@@ -12,10 +13,12 @@ export default function ContactForm() {
   return (
     <section className="mt-8 mb-24">
       <form
-        className={clsx("border border-[#DCDCDC] rounded-2xl bg-white p-7")}
+        className={clsx(
+          "border border-[#DCDCDC] rounded-3xl bg-white p-4 lg:p-7 flex-col"
+        )}
         onSubmit={formik.handleSubmit}
       >
-        <div className="grid lg:grid-cols-2 gap-x-10 gap-y-5">
+        <div className="grid lg:grid-cols-2 gap-x-10 lg:gap-y-5">
           <div>
             <ContactFormLabel id="Name" label="Name*" />
             <ContactFormInput
@@ -31,7 +34,7 @@ export default function ContactForm() {
               errorText={formik.errors.Name}
             />
           </div>
-          <div>
+          <div className="">
             <ContactFormLabel id="email" label="Email*" />
             <ContactFormInput
               onblur={formik.handleBlur}
@@ -47,21 +50,21 @@ export default function ContactForm() {
             />
           </div>
         </div>
-        <div className="grid lg:grid-cols-2 gap-x-10 my-5">
+        <div className="grid lg:grid-cols-2 mt-2 gap-x-10 lg:gap-y-5 lg:mt-4">
           <ContactRequestType />
           {/* Phone number field */}
           <ContactFormPhone
-           name="phoneNumber"
-           placeholder="Enter your phone number"
-           value={formik.values.phoneNumber}
-           onchange={(value) => formik.setFieldValue("phoneNumber", value)}
-           onblur={formik.handleBlur} // Pass Formik's handleBlur
-           touched={!!formik.touched.phoneNumber}
-           label="Phone Number"
-           errorText={formik.errors.phoneNumber}
+            name="phoneNumber"
+            placeholder="Enter your phone number"
+            value={formik.values.phoneNumber}
+            onchange={(value) => formik.setFieldValue("phoneNumber", value)}
+            onblur={formik.handleBlur} // Pass Formik's handleBlur
+            touched={!!formik.touched.phoneNumber}
+            label="Phone Number"
+            errorText={formik.errors.phoneNumber}
           />
         </div>
-        <div>
+        <div className="mt-4 lg:mt-6">
           <ContactFormLabel id="Message" label="Message*" />
           <ContactFormInput
             onblur={formik.handleBlur}
@@ -70,13 +73,18 @@ export default function ContactForm() {
             id="Message"
             textarea={true}
             value={formik.values.Message}
-            placeholder="Your Message"
+            placeholder="Enter your message here"
             type=""
             touched={!!formik.touched.Message && !!formik.errors.Message}
             errorText={formik.errors.Message}
           />
         </div>
-        <button type="submit">submit</button>
+        <ContactSubmitButton
+          type="submit"
+          text="Submit"
+          isValid={formik.isValid}
+          dirty={formik.dirty}
+        />
       </form>
     </section>
   );

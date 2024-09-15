@@ -2,6 +2,7 @@ export interface IContactText {
   text: string;
 }
 
+
 export default function ContactText({ text }: IContactText) {
   return (
     <p className="font-aventa_Semibold font-normal text-[#072222] text-[24px] lg:text-[32px] trailing-[-2%] leading-[31.68px] lg:leading-[42.24px] ">
@@ -17,3 +18,4 @@ export function ContactSubText({ text }: IContactText) {
     </h3>
   );
 }
+

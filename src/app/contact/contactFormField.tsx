@@ -1,4 +1,4 @@
-'./custom.css'
+import "./custom.css";
 import { ChangeEvent } from "react";
 import PhoneInput from "react-phone-number-input";
 
@@ -86,7 +86,6 @@ export interface IContactFormPhone {
   name: string;
   placeholder: string;
   value: string;
-
   onchange: (value: string | undefined) => void;
   onblur: (e: React.FocusEvent<HTMLInputElement>) => void;
   touched: boolean;
@@ -105,12 +104,12 @@ export function ContactFormPhone({
   errorText,
 }: IContactFormPhone) {
   return (
-    <div>
+    <div className="mt-5 lg:mt-0">
       <p className="text-sm font-medium text-gray-700 font-aventa_Semibold mb-1">
         {label}
       </p>
       <PhoneInput
-        value={value}
+        value={value || ""}
         defaultCountry="NG"
         placeholder={placeholder}
         onChange={onchange} // We pass only the value here, no event
@@ -139,6 +138,29 @@ export function ContactRequestType() {
       <p className="bg-[#F3F4F7] rounded-2xl w-full  font-aventa_Medium py-3 pl-3 mt-1 text-[#bfbfbf]">
         Mail
       </p>
+    </div>
+  );
+}
+
+export interface ISubmit {
+  type: "submit" | "reset" | "button";
+  text: string;
+  isValid: boolean; // New prop
+  dirty: boolean; // New prop
+}
+
+export function ContactSubmitButton({ type, text, isValid, dirty }: ISubmit) {
+  return (
+    <div className="flex items-end">
+      <button
+        className={`rounded-3xl bg-[#76AC3C] mt-5 text-aventa ml-auto py-3 font-aventa font-semibold px-10 lg:px-20 hover:opacity-70 transition-all duration-300 ${
+          !(isValid && dirty) ? "opacity-50 cursor-not-allowed" : ""
+        }`}
+        type={type}
+        disabled={!(isValid && dirty)} // Disable if form is not valid or untouched
+      >
+        {text}
+      </button>
     </div>
   );
 }

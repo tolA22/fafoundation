@@ -1,3 +1,6 @@
-{
-    @apply outline-none 
+.PhoneInputInput {
+  @apply outline-none py-3 bg-[#F3F4F7]  focus:bg-white focus:outline-none rounded-r-2xl;
+}
+.PhoneInput {
+  @apply bg-[#F3F4F7] pl-3 rounded-2xl outline-none border  border-[#F3F4F7];
 }
