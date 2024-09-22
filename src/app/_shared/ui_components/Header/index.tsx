@@ -16,26 +16,6 @@ const index = () => {
 
   const isActive = (path: string) => pathname === path;
 
-  // useEffect(() => {
-  //   // Check if window is available to ensure client-side execution
-  //   if (typeof window !== "undefined") {
-  //     const path = window.location.pathname;
-
-  //     // Determine the current page based on the path
-  //     if (path === "/home") {
-  //       setCurrentPage("Home");
-  //     } else if (path === "/about") {
-  //       setCurrentPage("About");
-  //     } else if (path === "/register") {
-  //       setCurrentPage("Register");
-  //     } else if (path === "/contact") {
-  //       setCurrentPage("Contact");
-  //     } else {
-  //       setCurrentPage("Unknown"); // Fallback for untracked routes
-  //     }
-  //   }
-  // }, []);
-
   function toggle() {
     setShow(!show);
     if (show) {
@@ -44,7 +24,6 @@ const index = () => {
       navRef.current?.classList.add("toggle");
     }
   }
-  console.log(currentPage);
   return (
     <header className=" py-5 sticky top-0 mx-auto items-center py lg:absolute lg:top-10 left-0 right-0 w-full flex justify-between max-w-[1050px] bg-white px-4 lg:rounded-2xl">
       <img className="max-w-[133px]" src="/icon.svg" alt="" />
@@ -56,7 +35,7 @@ const index = () => {
           <Navigation
             Navref={navRef}
             name="Home"
-            link="/home"
+            link="/"
             toggler={() => {
               setShow(false);
             }}

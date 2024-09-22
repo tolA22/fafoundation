@@ -10,26 +10,8 @@ export default function MeetTheTeam() {
         center
       />
       <section className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 justify-center pt-[4rem]">
-        <Profile
-          name="Funmilayo Akinrinmisi"
-          image="/p1.svg"
-          text="Founder & President"
-        />
-        <Profile
-          name="James Obrien"
-          image="/p2.svg"
-          text="Vice President, Global Operations"
-        />
-        <Profile
-          name="Funmilayo Akinrinmisi"
-          image="/p1.svg"
-          text="Founder & President"
-        />
-        <Profile
-          name="James Obrien"
-          image="/p2.svg"
-          text="Vice President, Global Operations"
-        />
+        <Profile name="Funmilayo Akinrinmisi" image="/p1.svg" text="Founder" />
+        <Profile name="Akin Akinrinmisi" image="/p2.svg" text="Co-Founder" />
       </section>
     </section>
   );
