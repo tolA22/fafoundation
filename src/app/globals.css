@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Sentient";
+  src: url('/fonts/Sentient-Variable.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Sentient-Italic";
+  src: url('/fonts/Sentient-Italic.otf') format('truetype');
+}
+
+@font-face {
+  font-family: "Aventa-Bold";
+  src: url('/fonts/Aventa-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Aventa-ExtraBold";
+  src: url('/fonts/Aventa-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Aventa-ExtraLight";
+  src: url('/fonts/Aventa-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Aventa-Light";
+  src: url('/fonts/Aventa-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Aventa-Medium";
+  src: url('/fonts/Aventa-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Aventa-Regular";
+  src: url('/fonts/Aventa-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Aventa-SemiBold";
+  src: url('/fonts/Aventa-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: "Aventa-Thin";
+  src: url('/fonts/Aventa-Thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "AvenirLTStd-Black";
+  src: url('/fonts/AvenirLTStd-Black.otf') format('truetype');
+}
+@font-face {
+  font-family: "AvenirLTStd-Book";
+  src: url('/fonts/AvenirLTStd-Book.otf') format('truetype');
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  /* background-color: #0B3434; */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
