@@ -7,8 +7,7 @@ import Socials from "../Socials";
 import "./custom.css";
 import { usePathname } from "next/navigation";
 
-const index = () => {
-  const [currentPage, setCurrentPage] = useState("");
+export default function Header() {
   const [show, setShow] = useState(false);
   const pathname = usePathname();
 
@@ -50,18 +49,6 @@ const index = () => {
             }}
             route={isActive}
           />
-          {/* <Navigation
-            Navref={navRef}
-            name="Blog"
-            link="/Blog"
-            currentPage={currentPage}
-            toggler={() => {
-              setShow(false);
-            }}
-            setPage={(e: string) => {
-              setCurrentPage(e);
-            }}
-          /> */}
           <Navigation
             Navref={navRef}
             name="Contact"
@@ -111,6 +98,4 @@ const index = () => {
       </div>
     </header>
   );
-};
-
-export default index;
+}
