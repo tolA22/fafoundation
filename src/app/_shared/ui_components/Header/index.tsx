@@ -5,32 +5,36 @@ import { useEffect, useState } from "react";
 import Navigation from "../Navigation";
 import Socials from "../Socials";
 import "./custom.css";
+import { usePathname } from "next/navigation";
 
 const index = () => {
   const [currentPage, setCurrentPage] = useState("");
   const [show, setShow] = useState(false);
+  const pathname = usePathname();
 
   const navRef = useRef<HTMLElement | null>(null);
 
-  useEffect(() => {
-    // Check if window is available to ensure client-side execution
-    if (typeof window !== "undefined") {
-      const path = window.location.pathname;
+  const isActive = (path: string) => pathname === path;
 
-      // Determine the current page based on the path
-      if (path === "/home") {
-        setCurrentPage("Home");
-      } else if (path === "/about") {
-        setCurrentPage("About");
-      } else if (path === "/register") {
-        setCurrentPage("Register");
-      } else if (path === "/contact") {
-        setCurrentPage("Contact");
-      } else {
-        setCurrentPage("Unknown"); // Fallback for untracked routes
-      }
-    }
-  }, []);
+  // useEffect(() => {
+  //   // Check if window is available to ensure client-side execution
+  //   if (typeof window !== "undefined") {
+  //     const path = window.location.pathname;
+
+  //     // Determine the current page based on the path
+  //     if (path === "/home") {
+  //       setCurrentPage("Home");
+  //     } else if (path === "/about") {
+  //       setCurrentPage("About");
+  //     } else if (path === "/register") {
+  //       setCurrentPage("Register");
+  //     } else if (path === "/contact") {
+  //       setCurrentPage("Contact");
+  //     } else {
+  //       setCurrentPage("Unknown"); // Fallback for untracked routes
+  //     }
+  //   }
+  // }, []);
 
   function toggle() {
     setShow(!show);
@@ -47,33 +51,27 @@ const index = () => {
       <div className="flex gap-10 items-center   ">
         <nav
           ref={navRef}
-          className="flex w-full-minus-10 rounded-[20px] lg:rounded-0 lg:w-max flex-col lg:flex-row top-[-600px] absolute lg:relative bg-white lg:top-0 left-5 pt-5 lg:pt-0"
+          className="flex w-full-minus-10 rounded-[20px] lg:rounded-0 lg:w-max flex-col lg:flex-row top-[-600px] absolute lg:relative lg:left-[-170px] bg-white lg:top-0 left-5 pt-5 lg:pt-0"
         >
           <Navigation
             Navref={navRef}
             name="Home"
             link="/home"
-            currentPage={currentPage}
             toggler={() => {
               setShow(false);
             }}
-            setPage={(e:string)=>{
-              setCurrentPage(e)
-            }}
+            route={isActive}
           />
           <Navigation
             Navref={navRef}
             name="About"
             link="/about"
-            currentPage={currentPage}
             toggler={() => {
               setShow(false);
             }}
-            setPage={(e:string)=>{
-              setCurrentPage(e)
-            }}
+            route={isActive}
           />
-          <Navigation
+          {/* <Navigation
             Navref={navRef}
             name="Blog"
             link="/Blog"
@@ -81,10 +79,10 @@ const index = () => {
             toggler={() => {
               setShow(false);
             }}
-            setPage={(e:string)=>{
-              setCurrentPage(e)
+            setPage={(e: string) => {
+              setCurrentPage(e);
             }}
-          />
+          /> */}
           <Navigation
             Navref={navRef}
             name="Contact"
@@ -92,11 +90,14 @@ const index = () => {
             toggler={() => {
               setShow(false);
             }}
-            currentPage={currentPage}
-            setPage={(e:string)=>{
-              setCurrentPage(e)
-            }}
+            route={isActive}
           />
+          <Link
+            className="ml-3 lg:hidden mr-3 rounded-[20px] px-3 py-2 font- bg-[#EEA523] hover:opacity-70 duration-500 text-center font-aventa_Semibold"
+            href="/contact"
+          >
+            Donate Now
+          </Link>
           <div className="lg:hidden flex justify-between mt-5 border-t border-[#EFEFEF] py-5 mx-5">
             <Socials link="" imgSrc="/four.png" />
             <Socials link="" imgSrc="/one.svg" />
@@ -106,19 +107,13 @@ const index = () => {
         </nav>
 
         <Link
-          className="hidden lg:inline-block rounded-[20px] px-3 py-2 font- bg-[#EEA523] hover:opacity-70 duration-500"
-          href="/donate"
+          className="hidden lg:inline-block rounded-[20px] px-3 py-2 font-aventa_Semibold bg-[#EEA523] hover:opacity-70 duration-500 "
+          href="/contact"
         >
           Donate Now
         </Link>
       </div>
       <div className="lg:hidden flex ">
-        <Link
-          className="mr-3 rounded-[20px] px-3 py-2 font- bg-[#EEA523] hover:opacity-70 duration-500"
-          href="/donate"
-        >
-          Donate Now
-        </Link>
         <div className=" ">
           {show ? (
             <img

@@ -59,13 +59,21 @@ export default function Footer() {
             <section className="flex text-white font-normal  my-12 lg:mt-4">
               <div className="flex flex-col w-1/2 gap-y-3">
                 <HeaderText text="COMPANY" />
-                <HeaderSubText text="About Us" />
-                <HeaderSubText text="Contact Us" />
+                <HeaderSubText text="About Us" footer={true} path="/about" />
+                <HeaderSubText
+                  text="Contact Us"
+                  footer={true}
+                  path="/contact"
+                />
               </div>
               <div className="flex flex-col gap-y-3">
                 <HeaderText text="SUPPORT US" />
-                <HeaderSubText text="Make a Donation" />
-                <HeaderSubText text="Become A Partner" />
+                <HeaderSubText text="Make a Donation" footer={true}  path="/contact"/>
+                <HeaderSubText
+                  text="Become A Partner"
+                  footer={true}
+                  path="/contact"
+                />
               </div>
             </section>
             <section className="text-white flex flex-col gap-y-3 lg:max-w-[70%]">
