@@ -25,7 +25,7 @@ export default function HomeSection(props: IHomeSection) {
   return (
     <section
       className={clsx(
-        "text-center  text-[#072222]",
+        "text-center p-4 lg:p-0  text-[#072222] transition-all duration-300",
         {
           "lg:text-left": !center,
         },

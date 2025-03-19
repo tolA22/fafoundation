@@ -12,6 +12,7 @@ export default function Header() {
   const pathname = usePathname();
 
   const navRef = useRef<HTMLElement | null>(null);
+  const headerRef = useRef<HTMLElement | null>(null);
 
   const isActive = (path: string) => pathname === path;
 
@@ -23,8 +24,31 @@ export default function Header() {
       navRef.current?.classList.add("toggle");
     }
   }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth >= 1024) {
+        if (window.scrollY > 0) {
+          headerRef.current?.classList.remove("lg:absolute");
+          headerRef.current?.classList.remove("lg:top-10");
+        } else {
+          headerRef.current?.classList.add("lg:absolute");
+          headerRef.current?.classList.add("lg:top-10");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className=" py-5 sticky top-0 mx-auto items-center py lg:absolute lg:top-10 left-0 right-0 w-full flex justify-between max-w-[1050px] bg-white px-4 lg:rounded-2xl">
+    <header
+      ref={headerRef}
+      className=" py-5 sticky top-0 mx-auto items-center py  lg:absolute lg:top-10 left-0 right-0 w-full flex justify-between max-w-[1050px] bg-white px-4 lg:rounded-2xl z-50 transition-all duration-100"
+    >
       <img className="max-w-[133px]" src="/icon.svg" alt="" />
       <div className="flex gap-10 items-center   ">
         <nav
@@ -60,7 +84,13 @@ export default function Header() {
           />
           <Link
             className="ml-3 lg:hidden mr-3 rounded-[20px] px-3 py-2 font- bg-[#EEA523] hover:opacity-70 duration-500 text-center font-aventa_Semibold"
-            href="/contact"
+            href="/donate"
+            onClick={() => {
+              if (window.screen.availWidth < 1024) {
+                navRef.current?.classList.remove("toggle");
+                setShow(false);
+              }
+            }}
           >
             Donate Now
           </Link>
@@ -74,7 +104,7 @@ export default function Header() {
 
         <Link
           className="hidden lg:inline-block rounded-[20px] px-3 py-2 font-aventa_Semibold bg-[#EEA523] hover:opacity-70 duration-500 "
-          href="/contact"
+          href="/donate"
         >
           Donate Now
         </Link>

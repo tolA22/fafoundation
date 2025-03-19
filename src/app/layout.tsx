@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "./_shared/ui_components/footer";
 import Header from "./_shared/ui_components/Header";
 import clsx from "clsx";
+import { StateProvider } from "./StateContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,11 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* #0B3434 */}
-      <body className={clsx("!bg-[#0B3434]")}>
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <StateProvider>
+        <body className={clsx("!bg-[#0B3434]")}>
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </StateProvider>
     </html>
   );
 }

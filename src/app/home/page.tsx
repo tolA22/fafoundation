@@ -5,14 +5,18 @@ import Image from "next/image";
 
 import PillButton from "../_shared/ui_components/button";
 import FafFocus from "./focus";
+import { useStateContext } from "../StateContext";
 // import FafStories from "./stories";
 
 export default function FafHome() {
   const [screenWidth, setScreenWidth] = useState<number>(0);
+  const { setFounderText, setValue } = useStateContext();
 
   useEffect(() => {
     // This will only run on the client side
     setScreenWidth(window.screen.availWidth);
+    setValue(false);
+    setFounderText(false);
   }, []);
 
   return (

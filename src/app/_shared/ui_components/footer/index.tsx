@@ -1,44 +1,57 @@
+"use client";
 import HomeSection from "../home_section";
 import JoinCard from "../join_card";
 import ImageLink, { IImageLink } from "./ImageLink";
 import { SOCIAL_MEDIA_PARAMS } from "./constant";
 import HeaderText, { HeaderSubText } from "./text";
 import Image from "next/image";
+import { useStateContext } from "@/app/StateContext";
+import Newesletter from "./Newesletter";
+import FounderText from "./FounderText";
 
 export default function Footer() {
+  const { value, founderText } = useStateContext();
+  //bg-[url("/footer_mobile.svg")] lg:bg-[url("/footer.svg")]
+
   return (
-    <section className='bg-[url("/footer_mobile.svg")] lg:bg-[url("/footer.svg")] bg-cover mt-[-6em] bg-no-repeat min-h-[1000px] px-2 lg:px-40 '>
-      <div>
-        <div className="pt-28 lg:pt-40">
-          <HomeSection
-            title="JOIN US"
-            description="Get involved and make a difference today"
-            center
-          />
-        </div>
-        <section className="flex mt-8 flex-col lg:flex-row gap-4">
-          <section className="w-full lg:w-1/2 h-full">
-            <JoinCard
-              title="Partner with Us"
-              description="Collaborate with us as a partner. Whether you're an organization, business, or individual, your partnership can amplify our efforts and bring about positive change"
-              actionText="Contact Us"
-              actionColor="green"
-              img="/partner.svg"
-            />
-          </section>
-          <section className="w-full lg:w-1/2 h-full">
-            <JoinCard
-              title="Make a Donation"
-              description="Your generous donations help us fund our projects and reach more people in need.
+    <footer className="bg-[#0B3434]  bg-no-repeat bg-[url('/footer_bg.png')] bg-right-bottom ">
+      <div className="bg-[url('/smallbg.png')] lg:bg-[url('/footer1.png')] bg-cover  bg-no-repeat  px-2 lg:px-40 z-10 relative bottom-8 lg:bottom-16">
+        {!value ? (
+          <div>
+            <div className="pt-28 lg:pt-40">
+              <HomeSection
+                title="JOIN US"
+                description="Get involved and make a difference today"
+                center
+              />
+            </div>
+            <section className="flex mt-8 flex-col lg:flex-row gap-4">
+              <section className="w-full lg:w-1/2 h-full">
+                <JoinCard
+                  title="Partner with Us"
+                  description="Collaborate with us as a partner. Whether you're an organization, business, or individual, your partnership can amplify our efforts and bring about positive change"
+                  actionText="Contact Us"
+                  actionColor="green"
+                  img="/partner.svg"
+                />
+              </section>
+              <section className="w-full lg:w-1/2 h-full">
+                <JoinCard
+                  title="Make a Donation"
+                  description="Your generous donations help us fund our projects and reach more people in need.
           Every contribution, no matter the size, makes an impact"
-              actionText="Donate Now"
-              actionColor="yellow"
-              img="/donation.svg"
-            />
-          </section>
-        </section>
+                  actionText="Donate Now"
+                  actionColor="yellow"
+                  img="/donation.svg"
+                />
+              </section>
+            </section>
+          </div>
+        ) : (
+          <div>{founderText ? <FounderText /> : <Newesletter />}</div>
+        )}
       </div>
-      <section className="mt-20 lg:mt-52 px-2 flex flex-col gap-y-2 lg:flex-row gap-x-[6rem]">
+      <section className="mt-10 lg:mt-16  flex flex-col gap-y-2 lg:flex-row gap-x-[6rem] px-3 lg:px-40">
         <section className="lg:w-2/5">
           <Image
             alt="Faf Black White logo"
@@ -68,7 +81,11 @@ export default function Footer() {
               </div>
               <div className="flex flex-col gap-y-3">
                 <HeaderText text="SUPPORT US" />
-                <HeaderSubText text="Make a Donation" footer={true}  path="/contact"/>
+                <HeaderSubText
+                  text="Make a Donation"
+                  footer={true}
+                  path="/contact"
+                />
                 <HeaderSubText
                   text="Become A Partner"
                   footer={true}
@@ -105,6 +122,6 @@ export default function Footer() {
           Copyright © Funmilayo Akinrimisi Foundation
         </h3>
       </section>
-    </section>
+    </footer>
   );
 }
