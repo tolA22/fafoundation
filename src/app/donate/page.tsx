@@ -13,7 +13,7 @@ const page = () => {
           titleClassName="!text-[#FFFFFFCC]"
           descriptionClassName="!text-[#EAE5D3] lg:max-w-[850px]"
           center
-          sectionClassName="mt-[7rem] lg:mt-[20rem] mb-[9rem] lg:pb-[10rem]"
+          sectionClassName="mt-[7rem] lg:mt-[14rem] mb-[9rem] lg:pb-[10rem]"
           descriptionHeaderStyle
           header
         />

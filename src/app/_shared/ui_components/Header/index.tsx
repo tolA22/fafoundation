@@ -25,29 +25,29 @@ export default function Header() {
     }
   }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerWidth >= 1024) {
-        if (window.scrollY > 0) {
-          headerRef.current?.classList.remove("lg:absolute");
-          headerRef.current?.classList.remove("lg:top-10");
-        } else {
-          headerRef.current?.classList.add("lg:absolute");
-          headerRef.current?.classList.add("lg:top-10");
-        }
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.innerWidth >= 1024) {
+  //       if (window.scrollY > 0) {
+  //         headerRef.current?.classList.remove("lg:absolute");
+  //         headerRef.current?.classList.remove("lg:top-10");
+  //       } else {
+  //         headerRef.current?.classList.add("lg:absolute");
+  //         headerRef.current?.classList.add("lg:top-10");
+  //       }
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+  // max-w-[1050px] lg:top-10
   return (
     <header
       ref={headerRef}
-      className=" py-5 sticky top-0 mx-auto items-center py  lg:absolute lg:top-10 left-0 right-0 w-full flex justify-between max-w-[1050px] bg-white px-4 lg:rounded-2xl z-50 transition-all duration-100"
+      className=" py-5 sticky top-0 mx-auto items-center py  lg:top-0 left-0 right-0 w-full flex justify-between bg-white px-4  z-50 transition-all duration-100 lg:px-10"
     >
       <img className="max-w-[133px]" src="/icon.svg" alt="" />
       <div className="flex gap-10 items-center   ">
