@@ -24,7 +24,11 @@ export default function JoinCard(props: IJoinCard) {
         </h5>
       </section>
       <section className="">
-        <PillButton buttonText={actionText} color={actionColor} />
+        <PillButton
+          action={action}
+          buttonText={actionText}
+          color={actionColor}
+        />
       </section>
       <Image
         src={img!}

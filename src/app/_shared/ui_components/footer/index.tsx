@@ -8,10 +8,12 @@ import Image from "next/image";
 import { useStateContext } from "@/app/StateContext";
 import Newesletter from "./Newesletter";
 import FounderText from "./FounderText";
+import { useRouter } from "next/navigation";
 
 export default function Footer() {
   const { value, founderText } = useStateContext();
   //bg-[url("/footer_mobile.svg")] lg:bg-[url("/footer.svg")]
+  const route = useRouter();
 
   return (
     <footer className="bg-[#0B3434]  bg-no-repeat bg-[url('/footer_bg.png')] bg-right-bottom ">
@@ -21,7 +23,7 @@ export default function Footer() {
             <div className="pt-28 lg:pt-40">
               <HomeSection
                 title="JOIN US"
-                description="Get involved and make a difference today"
+                description="Get involved and make a difference to day"
                 center
               />
             </div>
@@ -33,6 +35,9 @@ export default function Footer() {
                   actionText="Contact Us"
                   actionColor="green"
                   img="/partner.svg"
+                  action={() => {
+                    route.push("/contact");
+                  }}
                 />
               </section>
               <section className="w-full lg:w-1/2 h-full">
@@ -43,6 +48,9 @@ export default function Footer() {
                   actionText="Donate Now"
                   actionColor="yellow"
                   img="/donation.svg"
+                  action={() => {
+                    route.push("/donate");
+                  }}
                 />
               </section>
             </section>
@@ -84,12 +92,12 @@ export default function Footer() {
                 <HeaderSubText
                   text="Make a Donation"
                   footer={true}
-                  path="/contact"
+                  path="/donate"
                 />
                 <HeaderSubText
                   text="Become A Partner"
                   footer={true}
-                  path="/contact"
+                  path="/donate"
                 />
               </div>
             </section>

@@ -17,6 +17,12 @@ export default function PillButton({
 
   return (
     <button
+      onClick={() => {
+     
+        if (action) {
+          action()
+        }
+      }}
       className={clsx(
         {
           "border border-solid": !!colorProps.border,
