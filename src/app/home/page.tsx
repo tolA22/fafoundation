@@ -6,11 +6,13 @@ import Image from "next/image";
 import PillButton from "../_shared/ui_components/button";
 import FafFocus from "./focus";
 import { useStateContext } from "../StateContext";
+import { useRouter } from "next/navigation";
 // import FafStories from "./stories";
 
 export default function FafHome() {
   const [screenWidth, setScreenWidth] = useState<number>(0);
   const { setFounderText, setValue } = useStateContext();
+  const route = useRouter();
 
   useEffect(() => {
     // This will only run on the client side
@@ -35,8 +37,19 @@ export default function FafHome() {
               </h3>
             </section>
             <section className="pb-4 pt-8 flex gap gap-x-3">
-              <PillButton buttonText="Learn More" />
-              <PillButton buttonText="Donate Now" color="yellow" />
+              <PillButton
+                action={() => {
+                  route.push("/about");
+                }}
+                buttonText="Learn More"
+              />
+              <PillButton
+                action={() => {
+                  route.push("/donate");
+                }}
+                buttonText="Donate Now"
+                color="yellow"
+              />
             </section>
           </section>
         </section>

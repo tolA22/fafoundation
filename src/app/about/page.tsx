@@ -18,7 +18,7 @@ const Page = () => {
     setFounderText(false);
   }, []);
   return (
-    <div className="bg-[#0B3434] h-full min-h-[200px] lg:h-auto">
+    <div className="bg-[#0B3434] h-full min-h-[200px] lg:h-auto relative">
       {/* <div className='px-2 pt-12 lg:pt-36 bg-[url("/hero_mobile.svg")]   lg:bg-auto lg:bg-[url("/Hero-bg.png")]  bg-no-repeat min-h-[600px]  pb-4 flex items-center flex-col lg:pt-44'> */}
       <HeaderWrapper>
         <HomeSection
@@ -28,11 +28,12 @@ const Page = () => {
           titleClassName="!text-[#FFFFFFCC]"
           descriptionClassName="!text-[#EAE5D3] lg:max-w-[850px]"
           center
-          sectionClassName="mt-[7rem] lg:mt-[14rem] mb-[9rem] lg:mb-[0]"
+          sectionClassName="mt-[7rem] lg:mt-[14rem] mb-[9rem] lg:mb-[6rem] lg:pb-[27rem]"
           descriptionHeaderStyle
           header
         />
       </HeaderWrapper>
+
       <AboutFocus />
     </div>
   );
