@@ -14,7 +14,7 @@ export default function AboutFocus() {
           loop
           playsInline
           controlsList="nodownload"
-          className="absolute top-[26rem] md:top-[20rem] lg:top-[40rem] left-1/2 transform -translate-x-1/2  border-4 border-[#EAE5D3] rounded-xl   w-[300px]  lg:w-[800px]"
+          className="absolute top-[27rem] md:top-[20rem] lg:top-[40rem] left-1/2 transform -translate-x-1/2  border-4 border-[#EAE5D3] rounded-xl   w-[300px]  lg:w-[800px]"
           height="440"
         >
           <source src="/charity.mp4" type="video/mp4" />
