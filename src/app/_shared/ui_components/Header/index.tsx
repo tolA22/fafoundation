@@ -53,7 +53,7 @@ export default function Header() {
       <div className="flex gap-10 items-center  lg:w-[60vw]  lg:flex justify-between ">
         <nav
           ref={navRef}
-          className="flex w-full h-[95vh]  lg:rounded-0 lg:w-max flex-col lg:flex-row -top-[1000px] absolute lg:relative bg-white lg:top-0 left-0 pt-5 lg:pt-0 "
+          className="flex w-full h-[95vh] lg:h-max  lg:rounded-0 lg:w-max flex-col lg:flex-row -top-[1000px] absolute lg:relative bg-white lg:top-0 left-0 pt-5 lg:pt-0 "
         >
           <Navigation
             Navref={navRef}
