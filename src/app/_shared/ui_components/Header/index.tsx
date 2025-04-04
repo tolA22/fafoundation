@@ -47,13 +47,13 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className=" py-5 sticky top-0 mx-auto items-center py  lg:top-0 left-0 right-0 w-full flex justify-between bg-white px-4  z-50 transition-all duration-100 lg:px-10"
+      className=" py-5 sticky top-0 mx-auto items-center py  lg:top-0 left-0 right-0 w-full flex justify-between  bg-white px-4  z-50 transition-all duration-100 lg:px-10 "
     >
       <img className="max-w-[133px]" src="/icon.svg" alt="" />
-      <div className="flex gap-10 items-center   ">
+      <div className="flex gap-10 items-center  lg:w-[60vw]  lg:flex justify-between ">
         <nav
           ref={navRef}
-          className="flex w-full-minus-10 rounded-[20px] lg:rounded-0 lg:w-max flex-col lg:flex-row top-[-600px] absolute lg:relative lg:left-[-170px] bg-white lg:top-0 left-5 pt-5 lg:pt-0"
+          className="flex w-full h-[95vh]  lg:rounded-0 lg:w-max flex-col lg:flex-row -top-[1000px] absolute lg:relative bg-white lg:top-0 left-0 pt-5 lg:pt-0 "
         >
           <Navigation
             Navref={navRef}
@@ -82,24 +82,30 @@ export default function Header() {
             }}
             route={isActive}
           />
-          <Link
-            className="ml-3 lg:hidden mr-3 rounded-[20px] px-3 py-2 font- bg-[#EEA523] hover:opacity-70 duration-500 text-center font-aventa_Semibold"
-            href="/donate"
-            onClick={() => {
-              if (window.screen.availWidth < 1024) {
-                navRef.current?.classList.remove("toggle");
-                setShow(false);
-              }
-            }}
-          >
-            Donate Now
-          </Link>
-          <div className="lg:hidden flex justify-between mt-5 border-t border-[#EFEFEF] py-5 mx-5">
+          <div className="mt-5 border-t border-[#EFEFEF]  pt-5">
+            <Link
+              className="ml-3 lg:hidden mr-3 rounded-[20px] px-3 py-3 font- bg-[#EEA523] hover:opacity-70 duration-500 text-center font-aventa_Semibold border-t border-[#EFEFEF] w-[90vw] block mx-auto"
+              href="/donate"
+              onClick={() => {
+                if (window.screen.availWidth < 1024) {
+                  navRef.current?.classList.remove("toggle");
+                  setShow(false);
+                }
+              }}
+            >
+              Donate Now
+            </Link>
+          </div>
+
+          <div className="lg:hidden flex justify-center gap-10 mt-5 border-y border-[#EFEFEF] py-5 ">
             <Socials link="" imgSrc="/four.png" />
             <Socials link="" imgSrc="/one.svg" />
             <Socials link="" imgSrc="/two.svg" />
             <Socials link="" imgSrc="/three.svg" />
           </div>
+          <p className="mt-7 text-center lg:hidden">
+            Copyright © Funmilayo Akinrimisi Foundation
+          </p>
         </nav>
 
         <Link
